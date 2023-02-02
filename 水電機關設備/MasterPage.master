@@ -1,0 +1,66 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server" style="display:inline-block;">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <style>
+        .mechanical {
+            position: fixed;
+            bottom: 50px;
+            left: 10px;
+            height: auto;
+            z-index:20;
+        }
+        </style>
+        <title>水電機關設備</title>
+        <link rel="stylesheet" runat="server" media="screen" href="css\MasterPage.css"/>
+    </head>
+    <body style="text-align:center;display:inline-block;">
+        <form id="form1" runat="server">
+            <table>
+                <tr>
+                    <td>
+                        <asp:Button ID="建置作業" runat="server" PostBackUrl="./建置作業.aspx" Text="建置作業" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="品項資料" runat="server" PostBackUrl="./品項資料.aspx" Text="設備資料" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="契約資料" runat="server" PostBackUrl="./契約資料.aspx" Text="契約資料" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="維修紀錄作業" runat="server" PostBackUrl="./維修紀錄作業.aspx" Text="維修紀錄作業" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="報表作業" runat="server" PostBackUrl="./報表作業.aspx" Text="平面圖及水電管路圖" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="查詢作業" runat="server" PostBackUrl="./查詢作業.aspx" Text="查詢作業" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="維護契約" runat="server" PostBackUrl="./維護契約.aspx" Text="維護契約" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="零星維修作業" runat="server" PostBackUrl="./零星維修作業.aspx" Text="零星維修作業" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="廠商資料" runat="server" PostBackUrl="./廠商資料.aspx" Text="廠商資料" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="例行故障維修" runat="server" PostBackUrl="./例行故障維修.aspx" Text="例行故障維修" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="設備統計" runat="server" PostBackUrl="./設備統計.aspx" Text="設備統計" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="設備統計分群" runat="server" PostBackUrl="./設備統計分群.aspx" Text="設備統計分群" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="濾心更換週期" runat="server" PostBackUrl="./濾心清單.aspx" Text="濾心更換週期" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="濾心日誌" runat="server" PostBackUrl="./濾心日誌.aspx" Text="濾心日誌" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="水質檢驗週期" runat="server" PostBackUrl="./水質檢驗.aspx" Text="水質檢驗週期" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="測試" runat="server" PostBackUrl="./測試.aspx" Text="測試" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="更新資料" runat="server" PostBackUrl="./更新資料.aspx" Text="更新資料" CssClass="GreenButton" Visible="false" />
+                        <asp:label ID="帳號名" runat="server" Text="" CssClass="Greenlabel" />
+                        <asp:Button ID="修改密碼" runat="server" PostBackUrl="./修改密碼.aspx" Text="修改密碼" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="建立帳號" runat="server" PostBackUrl="./建立帳號.aspx" Text="建立帳號" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="登入" runat="server" PostBackUrl="./登入.aspx" Text="登入" CssClass="GreenButton"/>
+                        <asp:Button ID="登出" runat="server" OnClick="登出M_Click" Text="登出" CssClass="RedButton" Visible="false"/>
+                        <asp:Button ID="回到上一頁" runat="server" OnClick="回到上一頁_click" Text="回到上一頁" CssClass="GreenButton"/>
+                        <asp:Label ID="Label1" runat="server" Text="" CssClass="GreenLabel"/>
+                        <asp:Label ID="Label2" runat="server" Text="" CssClass="RedLabel"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"/>
+                    </td>
+                </tr>
+            </table>
+            <!-- Footer -->
+            <div style="background-color:#FFD382;padding:10px;margin-bottom:5px;">
+                交通部高速公路局中區養護工程分局 <br />
+                電話：04-22529181(總機）傳真機：04-22529262<br />
+                地址：40755 臺中市西屯區臺灣大道4段5巷55號 <br />
+                資料維護單位：中區養護工程分局秘書室<br />
+                網站更新日期：2023/02/02<br />
+		    </div>
+        </form>
+    </body>
+</html>

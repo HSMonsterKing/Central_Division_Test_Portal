@@ -1,0 +1,55 @@
+﻿<%@ Master Language="VB" CodeFile="./MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body  style = "white-space:nowrap;">
+    <form id="form1" runat="server">
+    <div>
+        <asp:Label ID="Title1" runat="server" Font-Names="標楷體" Font-Size="X-Large" ForeColor="Blue" Text="Label" style="font-family: 標楷體;text-align: center; display:block;"/>
+    </div>
+    <div style="width: 100%">
+        <asp:Image ID="Image1" runat="server" ImageUrl="./jpg/108大宗郵件.jpg" style="height:74px;display: block;margin-left: auto;margin-right: auto;"/>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td style="font-family: 標楷體; text-align: left; vertical-align: top; width: 100%">
+                                <asp:Button ID="Button6" runat="server" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./大宗郵件執據.aspx" Text="輸入"/>
+                                <asp:Button ID="Button22" runat="server" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./大宗郵件執據_查詢.aspx" Text="查詢"/>
+                                <asp:Button ID="Button16" runat="server" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./郵寄種類.aspx" Text="郵寄種類"/>
+                                <asp:Button ID="Button17" runat="server" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./搜尋.aspx" Text="搜尋"/>
+                                <asp:Button ID="Button18" runat="server" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./修改日期.aspx" Text="修改日期"/>
+                                <asp:Button ID="Button19" runat="server" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./統計.aspx" Text="統計"/>
+                                <asp:Button ID="Button20" runat="server" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./資費表.aspx" Text="資費表"/>
+                                <asp:Button ID="Button21" runat="server" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./未寄出郵件.aspx" Text="未寄出郵件"/>
+                                <asp:Button ID="Button24" runat="server" visible="false" style="font-size:Large;" Font-Names="標楷體" PostBackUrl="./電子交換失敗.aspx" Text="電子交換失敗"/>
+                                <asp:Button ID="Button23" runat="server" style="font-size:Large;" PostBackUrl="./電子公布欄.aspx" Text="電子公布欄"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: 標楷體; text-align: left; vertical-align: top; width: 100%">
+                                <asp:Panel ID="Panel1" runat="server" Width="100%">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+   
+    </div>
+    </form>
+</body>
+</html>

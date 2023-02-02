@@ -1,0 +1,55 @@
+                'A = dict("舊調結表(加：本基金已登帳而銀行未登帳之收入金額)").First
+                'While A IsNot Nothing
+                '    N = A.Next
+                '    B = dict("專案代收查詢(收入)").First
+                '    While B IsNot Nothing
+                '        If A.Value(0) = B.Value(0)
+                '            dict("舊調結表")(A.Value(1), 10) = "專案代收查詢"
+                '            dict("舊調結表")(A.Value(1), 11) = B.Value(1)
+                '            dict("專案代收查詢")(B.Value(1), 18) = "舊調結表"
+                '            dict("專案代收查詢")(B.Value(1), 19) = A.Value(1)
+                '            dict("舊調結表(加：本基金已登帳而銀行未登帳之收入金額)").Remove(A)
+                '            dict("專案代收查詢(收入)").Remove(B)
+                '            Exit While
+                '        End If
+                '        B = B.Next
+                '    End While
+                '    A = N
+                'End While
+                
+                'A = dict("專案代收查詢(收入)").First
+                'While A IsNot Nothing
+                '    dict("調結表")(列數, 1) = "減：本基金未登帳而銀行已登帳之收入金額"
+                '    dict("調結表")(列數, 2) = dict("專案代收查詢")(A.Value(1), 1).Year - 1911
+                '    dict("調結表")(列數, 3) = dict("專案代收查詢")(A.Value(1), 1).Month
+                '    dict("調結表")(列數, 4) = dict("專案代收查詢")(A.Value(1), 1).Day
+                '    dict("調結表")(列數, 7) = A.Value(0)
+                '    dict("調結表")(列數, 10) = "專案代收查詢"
+                '    dict("調結表")(列數, 11) = A.Value(1)
+                '    dict("專案代收查詢")(A.Value(1), 18) = "⚠調結表"
+                '    dict("專案代收查詢")(A.Value(1), 19) = 列數
+                '    A = A.Next
+                '    If (列數 Mod 34) = 28
+                '        列數 = 列數 + 13
+                '    Else
+                '        列數 = 列數 + 1
+                '    End If
+                'End While
+                'A = dict("帳戶明細(收入)").First
+                'While A IsNot Nothing
+                '    dict("調結表")(列數, 1) = "減：本基金未登帳而銀行已登帳之收入金額"
+                '    dict("調結表")(列數, 2) = dict("帳戶明細")(A.Value(1), 1).Year - 1911
+                '    dict("調結表")(列數, 3) = dict("帳戶明細")(A.Value(1), 1).Month
+                '    dict("調結表")(列數, 4) = dict("帳戶明細")(A.Value(1), 1).Day
+                '    dict("調結表")(列數, 7) = A.Value(0)
+                '    dict("調結表")(列數, 10) = "帳戶明細"
+                '    dict("調結表")(列數, 11) = A.Value(1)
+                '    dict("帳戶明細")(A.Value(1), 12) = "⚠調結表"
+                '    dict("帳戶明細")(A.Value(1), 13) = 列數
+                '    A = A.Next
+                '    If (列數 Mod 34) = 28
+                '        列數 = 列數 + 13
+                '    Else
+                '        列數 = 列數 + 1
+                '    End If
+                'End While

@@ -1,0 +1,333 @@
+body {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+#Title {
+    font-family: 微軟正黑體;
+    text-decoration: none;
+    color: green;
+}
+a {
+    text-decoration: none;
+}
+#Title:visited {
+    color: green;
+}
+.Panel1 {
+    white-space: nowrap;
+}
+.Panel1, .Panel4, .Panel5, .Panel6, .Panel7, .Panel8 {
+    display: inline;
+}
+.Input1 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    min-width: 150px;
+    max-width: 150px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+.Input2 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    min-width: 75px;
+    max-width: 75px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+.Input1:focus:enabled, .Input2:focus:enabled {
+    outline: none;
+    border: 2px solid green;
+    border-radius: 2px;
+}
+.GreenButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.GreenButton:hover:enabled {
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton:focus:enabled {
+    outline: none;
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.RedButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.RedButton:hover:enabled {
+    color: red;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+.RedButton:focus:enabled {
+    outline: none;
+    color: red;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+.UploadButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    min-width: 425px;
+    max-width: 425px;
+}
+.UploadButton:hover:enabled {
+    color: green;
+}
+.UploadButton:focus:enabled {
+    color: green;
+}
+.DropDownList {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+.DropDownList:hover:enabled {
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.DropDownList:focus:enabled {
+    outline: none;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenLabel {
+    /*存檔成功*/
+    color: green;
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    display: inline-block;
+    max-width: 0px;
+    white-space: nowrap;
+}
+.RedLabel {
+    /*存檔失敗*/
+    color: red;
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    display: inline-block;
+    max-width: 0px;
+    white-space: nowrap;
+}
+.Header {
+    white-space: nowrap;
+}
+.Row:focus-within .Item, .Row:focus-within .TextBox {
+    background-color: #F0F0F0;
+}
+.Item {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    height: 28px;
+    padding: 2px 1px;
+    position: relative;
+}
+.Item:focus-within .TextBox {
+    outline: 2px solid green;
+    outline-offset: 0px;
+}
+.TextBox {
+    font-size: x-large;
+    height: 100%;
+    resize: none;
+    padding: 1px 2px;
+    vertical-align: middle;
+}
+.TextBox:focus {
+    outline: none;
+}
+.id {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.單位別 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.承辦人 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.月 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.日 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.科目 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.摘要 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 225px;
+    max-width: 225px;
+    border: 0;
+}
+.姓名 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.商號 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.經手人 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.種類 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.號數 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.收入 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.支出 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.餘額 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.備註 {
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 125px;
+    max-width: 125px;
+    border: 0;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.Pager span {
+    color: green;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 0px 2px;
+    margin: 0;
+}
+.Pager a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0px 2px;
+    margin: 0;
+}
+.Pager a:hover {
+    color: green;
+    background-color: white;
+    border-radius: 2px;
+    padding: 0px 2px;
+    margin: 0;
+}
+.CompletionList {
+    position: absolute;
+    min-width: max-content;
+    white-space: nowrap;
+    display: block;
+    list-style-type: none;
+    text-align: left;
+    background-color: white;
+    outline: 2px solid blue;
+    padding: 0;
+    margin: 0;
+    max-height: 300px!important;
+    overflow-y: scroll;
+}
+.CompletionListHighlightedItem {
+    background-color: #E0E0E0;
+}

@@ -1,0 +1,53 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" style="display:inline-block;">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+        http://10.52.3.155:55/MasterPage.master
+        .money {
+            position: fixed;
+            bottom: 50px;
+            left: 10px;
+            height: auto;
+            z-index: 20;
+        }
+        .auto-style1 {
+            width: 221px;
+            height: 126px;
+        }
+        .auto-style2 {
+            z-index: 30;
+            position: relative;
+            bottom: -341px;
+            width: 100%;
+            left: 1px;
+        }
+    </style>
+    <title>中分入口網</title>
+    <link rel="stylesheet" runat="server" media="screen" href="css\MasterPage.css"/>
+</head>
+<body style="text-align:center;display:inline-block;">
+    <form id="form1" runat="server">
+    <div class="money">
+            </div>
+        <table style="table-layout:fixed" width="100%">
+            <tr>
+                <td align="center">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                </td>
+            </tr>
+        </table>
+        <!-- Footer 
+            <div style="background-color:#FFD382;padding:10px;margin-bottom:5px;">
+                交通部高速公路局中區養護工程分局 <br />
+                電話：04-22529181(總機)傳真機：04-22529262<br />
+                地址：40755 臺中市西屯區臺灣大道4段5巷55號 <br />
+                資料維護單位：中區養護工程分局秘書室<br />
+                網站更新日期：2022/11/15<br />
+		    </div>
+    </form>
+    <p>
+            <img src="image\png\roc.png" class="auto-style1"/></p>-->
+</body>
+</html>

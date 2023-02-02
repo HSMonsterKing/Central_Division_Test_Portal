@@ -1,0 +1,675 @@
+html {
+    display: table;
+    margin: auto;
+}
+body {
+    display: table-cell;
+    vertical-align: middle;
+    background-color:#FFD382;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+#Title {
+    font-family: 微軟正黑體;
+    text-decoration: none;
+    color: green;
+}
+a {
+    text-decoration: none;
+}
+#Title:visited {
+    color: green;
+}
+.Panel1 {
+    white-space: nowrap;
+    background-color:#FFD382;
+}
+.Panel1, .Panel4, .Panel5, .Panel6, .Panel7, .Panel8 {
+    display: inline;
+}
+.Panel3, .Panel4, .Panel5, .Panel6, .Panel7, .Panel8 {
+    background-color:#F2B69D;
+}
+mark {
+	background-color: transparent;
+	color: inherit;
+}
+ ul.drop-down-menu ul {
+        border: #ccc 1px solid;
+        position: absolute;
+        z-index: 99;
+        left: -1px;
+        top: 100%;
+       min-width: 180px;
+    }
+    ul.drop-down-menu ul li {
+        border-bottom: #ccc 1px solid;
+    }
+    ul.drop-down-menu ul li:last-child {
+        border-bottom: none;
+    }
+    ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+        z-index: 999;
+        top: 10px;
+        left: 90%;
+    }
+    ul.drop-down-menu ul { /*隱藏次選單*/
+        display: none;
+    }
+    ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+        display: block;
+    }
+.Input1 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    min-width: 150px;
+    max-width: 150px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+.Input2 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    min-width: 75px;
+    max-width: 75px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+.Input1:focus:enabled, .Input2:focus:enabled {
+    outline: none;
+    border: 2px solid green;
+    border-radius: 2px;
+}
+.GreenButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.GreenButton:hover:enabled {
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton:focus:enabled {
+    outline: none;
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton2 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+    float:left;
+}
+.GreenButton2:hover:enabled {
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton2:focus:enabled {
+    outline: none;
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton3 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+    float: none;
+}
+.GreenButton3:hover:enabled {
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton3:focus:enabled {
+    outline: none;
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton4 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+    float:right;
+}
+.GreenButton4:hover:enabled {
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton4:focus:enabled {
+    outline: none;
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.RedButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.RedButton:hover:enabled {
+    color: red;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+.RedButton:focus:enabled {
+    outline: none;
+    color: red;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+.UploadButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    min-width: 425px;
+    max-width: 425px;
+}
+.UploadButton:hover:enabled {
+    color: green;
+}
+.UploadButton:focus:enabled {
+    color: green;
+}
+.DropDownList {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+.DropDownList:hover:enabled {
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.DropDownList:focus:enabled {
+    outline: none;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenLabel {
+    /*存檔成功*/
+    color: green;
+    font-size: xx-large;
+    font-family: 微軟正黑體;
+    display: inline-block;
+    max-width: 0px;
+    white-space: nowrap;
+}
+.RedLabel {
+    /*存檔失敗*/
+    color: red;
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    display: inline-block;
+    max-width: 0px;
+    white-space: nowrap;
+}
+.Header {
+    white-space: nowrap;
+}
+.Row:focus-within .Item, .Row:focus-within .TextBox {
+    background-color: #F0F0F0;
+}
+.Label {
+    display: table-cell;
+    vertical-align: middle;
+}
+.Label1 {
+    /*DataItemIndex + 1*/
+    font-size: medium;
+    font-family: 微軟正黑體;
+    font-size: x-large;
+    color: purple;
+    font-weight: bold;
+    float:middle;
+}
+.Label2 {
+    /*id*/
+    font-size: medium;
+    font-family: 微軟正黑體;
+    font-size: xx-large;
+    color: purple;
+    font-weight: bold;
+    float:middle;
+}
+.Label3 {
+    /*id*/
+    font-size: medium;
+    font-family: 新細明體;
+    min-width: 100px;
+    max-width: 100px;
+    color: purple;
+}
+.Item {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    height: 28px;
+    padding: 2px 1px;
+}
+.Item:focus-within .TextBox {
+    outline: 2px solid green;
+    outline-offset: 0px;
+}
+.TextBox {
+    font-size: x-large;
+    height: 100%;
+    resize: none;
+    padding: 1px 2px;
+    vertical-align: middle;
+}
+.TextBox:focus {
+    outline: none;
+}
+.TextBox1 {
+    /*傳票送出納檔名*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 150px;
+    max-width: 150px;
+    border: 0;
+}
+.TextBox2 {
+    /*年*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.TextBox3 {
+    /*開票日期*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 75px;
+    max-width: 75px;
+    border: 0;
+}
+.TextBox4 {
+    /*傳票號碼*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 75px;
+    max-width: 75px;
+    border: 0;
+}
+.TextBox5 {
+    /*之*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 35px;
+    max-width: 35px;
+    border: 0;
+}
+.TextBox6 {
+    /*名稱*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 124px;
+    max-width: 124px;
+    border: 0;
+}
+.TextBox7 {
+    /*登錄序號*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 115px;
+    max-width: 115px;
+    border: 0;
+}
+.TextBox8 {
+    /*登錄日期*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 75px;
+    max-width: 75px;
+    border: 0;
+}
+.TextBox9 {
+    /*預付日期*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 75px;
+    max-width: 75px;
+    border: 0;
+}
+.TextBox10 {
+    /*收入金額*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 90px;
+    max-width: 90px;
+    border: 0;
+}
+.TextBox11 {
+    /*支出金額*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 90px;
+    max-width: 90px;
+    border: 0;
+}
+.TextBox12 {
+    /*收款人代碼*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.TextBox13 {
+    /*收款人名稱*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 124px;
+    max-width: 124px;
+    border: 0;
+}
+.TextBox14 {
+    /*銀行名稱*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 124px;
+    max-width: 124px;
+    border: 0;
+}
+.TextBox15 {
+    /*銀行代碼*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 75px;
+    max-width: 75px;
+    border: 0;
+}
+.TextBox16 {
+    /*匯入帳號*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 125px;
+    max-width: 125px;
+    border: 0;
+}
+.TextBox17 {
+    /*收款人匯款戶名*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 124px;
+    max-width: 124px;
+    border: 0;
+}
+.TextBox18 {
+    /*收款人統編*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 85px;
+    max-width: 85px;
+    border: 0;
+}
+.TextBox19 {
+    /*TXT檔名*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox20 {
+    /*總金額*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 90px;
+    max-width: 90px;
+    border: 0;
+}
+.TextBox21 {
+    /*順序*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.TextBox22 {
+    /*傳票資料id*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox23 {
+    /*來源*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 110px;
+    max-width: 110px;
+    border: 0;
+}
+.TextBox24 {
+    /*序號1*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.TextBox25 {
+    /*序號2*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 50px;
+    max-width: 50px;
+    border: 0;
+}
+.TextBox26 {
+    /*代收日期*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox27 {
+    /*入帳日期*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox28 {
+    /*摘要*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox29 {
+    /*收入金額*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 90px;
+    max-width: 90px;
+    border: 0;
+}
+.TextBox30 {
+    /*支出金額*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 90px;
+    max-width: 90px;
+    border: 0;
+}
+.TextBox31 {
+    /*帳戶餘額*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 90px;
+    max-width: 90px;
+    border: 0;
+}
+.TextBox32 {
+    /*備註*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox33 {
+    /*交易時間*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox34 {
+    /*繳款人識別碼*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 110px;
+    max-width: 110px;
+    border: 0;
+}
+.TextBox35 {
+    /*客戶名稱*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox36 {
+    /*繳款銀行代碼*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 110px;
+    max-width: 110px;
+    border: 0;
+}
+.TextBox37 {
+    /*交易序號*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+.TextBox38 {
+    /*扣款帳號*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: right;
+    min-width: 150px;
+    max-width: 150px;
+    border: 0;
+}
+.TextBox39 {
+    /*付款銀行名稱*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: left;
+    min-width: 124px;
+    max-width: 124px;
+    border: 0;
+}
+.TextBox40 {
+    /*通路別*/
+    font-size: medium;
+    font-family: 新細明體;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+    border: 0;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.Pager span {
+    color: green;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 0px 2px;
+    margin: 0;
+}
+.Pager a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0px 2px;
+    margin: 0;
+}
+.Pager a:hover {
+    color: green;
+    background-color: white;
+    border-radius: 2px;
+    padding: 0px 2px;
+    margin: 0;
+}

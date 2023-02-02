@@ -1,0 +1,229 @@
+html {
+    display: table;
+    margin: auto;
+}
+body {
+    display: table-cell;
+    vertical-align: middle;
+    background-color:#FFD382;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+#Title {
+    font-family: 微軟正黑體;
+    text-decoration: none;
+    color: green;
+}
+a {
+    text-decoration: none;
+}
+#Title:visited {
+    color: green;
+}
+.Panel1 {
+    white-space: nowrap;
+    background-color:#FFD382;
+}
+.Panel1, .Panel4, .Panel5, .Panel6, .Panel7, .Panel8 {
+    display: inline;
+}
+.Panel3, .Panel4, .Panel5, .Panel6, .Panel7, .Panel8 {
+    background-color:#F2B69D;
+}
+mark {
+	background-color: transparent;
+	color: inherit;
+}
+ ul.drop-down-menu ul {
+        border: #ccc 1px solid;
+        position: absolute;
+        z-index: 99;
+        left: -1px;
+        top: 100%;
+       min-width: 180px;
+    }
+    ul.drop-down-menu ul li {
+        border-bottom: #ccc 1px solid;
+    }
+    ul.drop-down-menu ul li:last-child {
+        border-bottom: none;
+    }
+    ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+        z-index: 999;
+        top: 10px;
+        left: 90%;
+    }
+    ul.drop-down-menu ul { /*隱藏次選單*/
+        display: none;
+    }
+    ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+        display: block;
+    }
+.Input1 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    min-width: 150px;
+    max-width: 150px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+.Input2 {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    min-width: 75px;
+    max-width: 75px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+.Input1:focus:enabled, .Input2:focus:enabled {
+    outline: none;
+    border: 2px solid green;
+    border-radius: 2px;
+}
+.GreenButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.GreenButton:hover:enabled {
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenButton:focus:enabled {
+    outline: none;
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.RedButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.RedButton:hover:enabled {
+    color: red;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+.RedButton:focus:enabled {
+    outline: none;
+    color: red;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+.UploadButton {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    min-width: 425px;
+    max-width: 425px;
+}
+.UploadButton:hover:enabled {
+    color: green;
+}
+.UploadButton:focus:enabled {
+    color: green;
+}
+.DropDownList {
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+.DropDownList:hover:enabled {
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.DropDownList:focus:enabled {
+    outline: none;
+    border: 1px solid green;
+    border-radius: 2px;
+}
+.GreenLabel {
+    /*存檔成功*/
+    color: green;
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    display: inline-block;
+    max-width: 0px;
+    white-space: nowrap;
+}
+.RedLabel {
+    /*存檔失敗*/
+    color: red;
+    font-size: x-large;
+    font-family: 微軟正黑體;
+    display: inline-block;
+    max-width: 0px;
+    white-space: nowrap;
+}
+.Header {
+    white-space: nowrap;
+}
+.Row:focus-within .Item, .Row:focus-within .TextBox {
+    background-color: #F0F0F0;
+}
+.Label {
+    display: table-cell;
+    vertical-align: middle;
+}
+.Item {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    height: 28px;
+    padding: 2px 1px;
+}
+.Item:focus-within .TextBox {
+    outline: 2px solid green;
+    outline-offset: 0px;
+}
+.TextBox {
+    font-size: x-large;
+    height: 100%;
+    resize: none;
+    padding: 1px 2px;
+    vertical-align: middle;
+}
+.TextBox:focus {
+    outline: none;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.Pager span {
+    color: green;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 0px 2px;
+    margin: 0;
+}
+.Pager a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0px 2px;
+    margin: 0;
+}
+.Pager a:hover {
+    color: green;
+    background-color: white;
+    border-radius: 2px;
+    padding: 0px 2px;
+    margin: 0;
+}

@@ -1,0 +1,119 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" style="display:inline-block;">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+        http://10.52.3.155:55/MasterPage.master
+        .money {
+            position: fixed;
+            bottom: 50px;
+            left: 10px;
+            height: auto;
+            z-index: 20;
+        }
+        .auto-style1 {
+            width: 221px;
+            height: 126px;
+        }
+        .auto-style2 {
+            z-index: 30;
+            position: relative;
+            bottom: -341px;
+            width: 100%;
+            left: 1px;
+        }
+    </style>
+    <title>零用金系統</title>
+    <link rel="stylesheet" runat="server" media="screen" href="css\MasterPage.css"/>
+</head>
+<body style="text-align:center;display:inline-block;">
+    <form id="form1" runat="server">
+    <div class="money">
+            </div>
+        <table style="table-layout:fixed" width="100%">
+            <tr>
+                <td align="right" valign="top" width="33%">
+                    <%--<nav id="nav" style="text-justify: distribute-all-lines;text-align-last: justify;">
+								<ul class="drop-down-menu">
+                                    <li >
+										<a href="#">報表資料</a>
+										<ul >
+											<li><a href="取號.aspx">取號</a></li>
+                                            <li><a href="收支備查簿.aspx">收支備查簿</a></li>
+                                            <li><a href="常用清單.aspx">常用清單</a></li>
+                                            <li><a href="分配明細表.aspx">分配明細表</a></li>
+                                            <li><a href="核銷支出明細備查簿.aspx">核銷支出明細備查簿</a></li>
+										</ul>
+									</li>
+                                    <li>
+										<a href="#">查詢資料</a>
+										<ul>
+											<li><a href="日誌.aspx">日誌</a></li>
+                                            <li><a href="收支備查簿.aspx">收支備查簿</a></li>
+                                            <li><a href="常用清單.aspx">常用清單</a></li>
+                                            <li><a href="分配明細表.aspx">分配明細表</a></li>
+                                            <li><a href="核銷支出明細備查簿.aspx">核銷支出明細備查簿</a></li>
+										</ul>
+									</li>
+                                    <li>
+										<a href="#">下載資料</a>
+										<ul>
+                                            <li><asp:Button ID="下載" runat="server" OnClick="Download" Text="下載零用金查核表" CssClass="GreenButton"/></li>
+                                            <li><asp:Button ID="下載2" runat="server" OnClick="Download2" Text="下載新年度零用金申請通知" CssClass="GreenButton"/></li>
+										</ul>
+									</li>
+                                    <asp:label ID="提醒l" runat="server" Text="" CssClass="Greenlabel" />
+								</ul>
+					</nav>--%>
+                    <asp:Button ID="回到上一頁" runat="server" OnClick="回到上一頁_click" Text="回到上一頁" CssClass="GreenButton"/>
+                    <asp:Button ID="常用清單" runat="server" PostBackUrl="./常用清單.aspx" Text="常用清單" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="科目清單" runat="server" PostBackUrl="./科目清單.aspx" Text="科目清單" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="分配明細表" runat="server" PostBackUrl="./分配明細表.aspx" Text="分配明細表" CssClass="GreenButton" Visible="false" />
+                </td>
+                <td align="center" valign="top" width="33%"">
+                    <asp:Button ID="取號" runat="server" PostBackUrl="./取號.aspx" Text="取號" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="收支備查簿" runat="server" PostBackUrl="./收支備查簿.aspx" Text="收支備查簿" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="審核" runat="server" PostBackUrl="./審核.aspx" Text="審核" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="核銷支出明細備查簿" runat="server" PostBackUrl="./核銷支出明細備查簿.aspx" Text="核銷送交主計室明細表" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="主計室審核" runat="server" PostBackUrl="./主計室審核.aspx" Text="主計室審核" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="查詢" runat="server" PostBackUrl="./查詢.aspx" Text="查詢" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="日誌" runat="server" PostBackUrl="./日誌.aspx" Text="日誌" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="提醒" runat="server" PostBackUrl="./提醒.aspx" Text="提醒" CssClass="GreenButton" Visible="false" />
+                    <asp:label ID="提醒l" runat="server" Text="" CssClass="Label1" />
+                    <asp:label ID="帳號名" runat="server" Text="" CssClass="Label2" />
+                    <asp:Button ID="登入" runat="server"  PostBackUrl="./登入.aspx" Text="登入" CssClass="GreenButton"/>
+                    <asp:Button ID="登出" runat="server" OnClick="登出M_Click" Text="登出" CssClass="RedButton" Visible="false" />
+                </td>
+                <td align="left" valign="top" width="33%">
+                    <asp:Button ID="其他作業" runat="server" PostBackUrl="./其他作業.aspx" Text="其他作業" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="留言板" runat="server" PostBackUrl="./留言板.aspx" Text="留言板" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="查核資料" runat="server" PostBackUrl="./查核資料.aspx" Text="查核資料" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="更新資料" runat="server" PostBackUrl="./更新資料.aspx" Text="更新資料" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="修改密碼" runat="server" PostBackUrl="./修改密碼.aspx" Text="修改密碼" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="建立帳號" runat="server" PostBackUrl="./建立帳號.aspx" Text="建立帳號" CssClass="GreenButton" Visible="false" />
+                    <asp:Button ID="下載" runat="server" OnClick="Download" Text="下載零用金查核表" CssClass="GreenButton"/>
+                    <asp:Button ID="下載2" runat="server" OnClick="Download2" Text="下載新年度零用金申請通知" CssClass="GreenButton"/>
+                    <asp:Label ID="Label1" runat="server" Text="" CssClass="GreenLabel"/>
+                    <asp:Label ID="Label2" runat="server" Text="" CssClass="RedLabel"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                </td>
+            </tr>
+        </table>
+        <!-- Footer -->
+            <div style="background-color:#FFD382;padding:10px;margin-bottom:5px;">
+                交通部高速公路局中區養護工程分局 <br />
+                電話：04-22529181(總機)傳真機：04-22529262<br />
+                地址：40755 臺中市西屯區臺灣大道4段5巷55號 <br />
+                資料維護單位：中區養護工程分局秘書室<br />
+                網站更新日期：2023/01/11<br />
+		    </div>
+    </form>
+    <p>
+            <img src="image\png\roc.png" class="auto-style1"/></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>出納對帳系統</title>
+    <link rel="stylesheet" runat="server" media="screen" href="css\MasterPage.css"/>
+</head>
+<body style="text-align:center;">
+    <form id="form1" runat="server">
+        <table>
+            <tr>
+                <td>
+                    <asp:Button ID="現金備查簿" runat="server" PostBackUrl="./現金備查簿.aspx" Text="現金備查簿" CssClass="GreenButton"/>
+                    <asp:Button ID="分錄" runat="server" PostBackUrl="./分錄.aspx" Text="分錄" CssClass="GreenButton"/>
+                    <asp:Button ID="保管品" runat="server" PostBackUrl="./保管品.aspx" Text="保管品" CssClass="GreenButton"/>
+                    <asp:Button ID="結算" runat="server" PostBackUrl="./結算.aspx" Text="結算" CssClass="GreenButton"/>
+                    <asp:Button ID="報表" runat="server" PostBackUrl="./報表.aspx" Text="報表" CssClass="GreenButton"/>
+                    <asp:Button ID="付款查詢" runat="server" PostBackUrl="./付款查詢.aspx" Text="付款查詢" CssClass="GreenButton"/>
+                    <asp:Button ID="傳票資料" runat="server" PostBackUrl="./傳票資料.aspx" Text="傳票資料" CssClass="GreenButton"/>
+                    <asp:Button ID="土銀匯款資料" runat="server" PostBackUrl="./土銀匯款資料.aspx" Text="土銀匯款資料" CssClass="GreenButton"/>
+                    <asp:Button ID="對帳" runat="server" visible="true" PostBackUrl="./對帳.aspx" Text="對帳" CssClass="GreenButton"/>
+                    <asp:Button ID="上傳" runat="server" visible="false" PostBackUrl="./上傳.aspx" Text="上傳" CssClass="GreenButton"/>
+                    <asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="True" CssClass="UploadButton"/>
+                    <asp:Button ID="匯入" runat="server" Text="匯入" OnClick="Import" CssClass="GreenButton"/>
+                    <asp:Label ID="Label1" runat="server" Text="" CssClass="GreenLabel"/>
+                    <asp:Label ID="Label2" runat="server" Text="" CssClass="RedLabel"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
