@@ -19,7 +19,7 @@ Partial Class MasterPage
         If Not Page.IsPostBack Then
         End If
         Dim 權限() As object={更新資料,修改密碼,登出}
-        Dim 權限林() As object={建置作業,品項資料,報表作業,查詢作業,零星維修作業,維護契約,例行故障維修,廠商資料,設備統計,設備統計分群,濾心更換週期,水質檢驗週期,濾心日誌}
+        Dim 權限林() As object={建置作業,品項資料,報表作業,查詢作業,零星維修作業,維護契約,例行故障維修,廠商資料,設備統計,設備統計分群,濾心更換週期,水質檢驗週期,濾心日誌,留言板}
         IF Session("水_atype")="all"
             建立帳號.Visible=True
         End If

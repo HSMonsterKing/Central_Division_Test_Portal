@@ -1765,62 +1765,62 @@ Partial Class 收支備查簿
                 Label3.Text="種類不相符，請確定種類頁面使否相符"
             ELSE
                 If CType(Me.GridView1.Rows(i).FindControl("審核狀態"), Label).Text="駁回"'駁回新增修改紀錄，駁回為 鎖定False,送出true，要新增至修改資料
-                DIM sql As string = "SELECT * FROM [收支備查簿] where id=" & id
-                data.SelectCommAnd = sql
-                data_dv = data.Select(New DataSourceSelectArguments)
-                Dim 單位別_前 As String = data_dv(0)("單位別").ToString()
-                Dim 承辦人_前 As String = data_dv(0)("承辦人").ToString()
-                Dim 月_前 As String = data_dv(0)("月").ToString()
-                Dim 日_前 As String = data_dv(0)("日").ToString()
-                Dim 科目_前 As String = data_dv(0)("科目").ToString()
-                If data_dv(0)("科目2").ToString()<>""
-                    科目_前 = data_dv(0)("科目").ToString() & ";" & data_dv(0)("科目2").ToString()
-                End If
-                Dim 摘要_前 As String = data_dv(0)("摘要").ToString()
-                Dim 姓名_前 As String = data_dv(0)("姓名").ToString()
-                Dim 商號_前 As String = data_dv(0)("商號").ToString()
-                Dim 經手人_前 As string = data_dv(0)("經手人").ToString()
-                Dim 種類_前 As String = data_dv(0)("種類").ToString()
-                Dim 號數_前 As String = data_dv(0)("號數").ToString()
-                Dim 收入_前 As String = data_dv(0)("收入").ToString()
-                Dim 支出_前 As String = data_dv(0)("支出").ToString()
-                Dim 備註_前 As String = data_dv(0)("備註").ToString()
-                '判斷資料是否有修改
-                If 號數<>""
-                    號數=CType(號數,Int32)
-                    號數=CType(號數,string)
-                End If 
-                'B XZ 沒有收入，會到導致""<>"0" ，先將收入及支出空值得收入改成預設值0
-                If 收入=""
-                    收入="0"
-                End If
-                If 支出=""
-                    支出="0"
-                End If  
-                If 單位別<>單位別_前 or 承辦人<>承辦人_前 or 月<>月_前 or 日<>日_前 or 原本科目<>科目_前 or 摘要<>摘要_前 or 姓名<>姓名_前 or 商號<>商號_前 or 經手人<>經手人_前 or 種類<>種類_前 or 號數<>號數_前 or (收入<>收入_前 And 種類="A" ) or 支出<>支出_前 or 備註<>備註_前
-                    '程式正式執行
-                    '新增修改資料
-                    Dim date1 As string = DateTime.now.tostring()
-                    Dim date2 As string = DateTime.now.tostring("yyyy-MM-dd HH:mm:ss")
-                    Dim insert1 As string = _
-                    "INSERT INTO 修改資料 " & _
-                    "(id_收,單位別,單位別_改,承辦人,承辦人_改,月,月_改,日,日_改,科目,科目_改,摘要,摘要_改,姓名,姓名_改,商號,商號_改,經手人,經手人_改,種類,種類_改,號數,號數_改,收入,收入_改,支出,支出_改,備註,備註_改,date) " & _
-                    "VALUES " & _
-                    "(" & id & ",NULLIF(N'" & 單位別_前 & "',''),NULLIF(N'" & 單位別 & "',''),NULLIF(N'" & _
-                    承辦人_前 & "',''),NULLIF(N'" & 承辦人 & "',''),NULLIF('" & _
-                    月_前 & "',''),NULLIF('" & 月 & "',''),NULLIF('" & _
-                    日_前 & "',''),NULLIF('" & 日 & "',''),NULLIF(N'" & _
-                    科目_前 & "',''),NULLIF(N'" & 原本科目 & "',''),NULLIF(N'" & _
-                    摘要_前 & "',''),NULLIF(N'" & 摘要 & "',''),NULLIF(N'" & _
-                    姓名_前 & "',''),NULLIF(N'" & 姓名 & "',''),NULLIF(N'" & _ 
-                    商號_前 & "',''),NULLIF(N'" & 商號 & "',''),NULLIF(N'" & _
-                    經手人_前 & "',''),NULLIF(N'" & 經手人 & "',''),NULLIF(N'" & _
-                    種類_前 & "',''),NULLIF(N'" & 種類 & "',''),NULLIF('" & _
-                    號數_前 & "',''),NULLIF('" & 號數 & "',''),NULLIF('" & _
-                    收入_前 & "',''),NULLIF('" & 收入 & "',''),NULLIF('" & _
-                    支出_前 & "',''),NULLIF('" & 支出 & "',''),NULLIF(N'" & _
-                    備註_前 & "',''),NULLIF(N'" & 備註 & "',''),NULLIF(N'" & date1 &  "',''))"
-                    data.insertCommAnd = insert1
+                    Dim sql As string = "SELECT * FROM [收支備查簿] where id=" & id
+                    data.SelectCommAnd = sql
+                    data_dv = data.Select(New DataSourceSelectArguments)
+                    Dim 單位別_前 As String = data_dv(0)("單位別").ToString()
+                    Dim 承辦人_前 As String = data_dv(0)("承辦人").ToString()
+                    Dim 月_前 As String = data_dv(0)("月").ToString()
+                    Dim 日_前 As String = data_dv(0)("日").ToString()
+                    Dim 科目_前 As String = data_dv(0)("科目").ToString()
+                    If data_dv(0)("科目2").ToString()<>""
+                        科目_前 = data_dv(0)("科目").ToString() & ";" & data_dv(0)("科目2").ToString()
+                    End If
+                    Dim 摘要_前 As String = data_dv(0)("摘要").ToString()
+                    Dim 姓名_前 As String = data_dv(0)("姓名").ToString()
+                    Dim 商號_前 As String = data_dv(0)("商號").ToString()
+                    Dim 經手人_前 As string = data_dv(0)("經手人").ToString()
+                    Dim 種類_前 As String = data_dv(0)("種類").ToString()
+                    Dim 號數_前 As String = data_dv(0)("號數").ToString()
+                    Dim 收入_前 As String = data_dv(0)("收入").ToString()
+                    Dim 支出_前 As String = data_dv(0)("支出").ToString()
+                    Dim 備註_前 As String = data_dv(0)("備註").ToString()
+                    '判斷資料是否有修改
+                    If 號數<>""
+                        號數=CType(號數,Int32)
+                        號數=CType(號數,string)
+                    End If 
+                    'B XZ 沒有收入，會到導致""<>"0" ，先將收入及支出空值得收入改成預設值0
+                    If 收入=""
+                        收入="0"
+                    End If
+                    If 支出=""
+                        支出="0"
+                    End If  
+                    If 單位別<>單位別_前 or 承辦人<>承辦人_前 or 月<>月_前 or 日<>日_前 or 原本科目<>科目_前 or 摘要<>摘要_前 or 姓名<>姓名_前 or 商號<>商號_前 or 經手人<>經手人_前 or 種類<>種類_前 or 號數<>號數_前 or (收入<>收入_前 And 種類="A" ) or 支出<>支出_前 or 備註<>備註_前
+                        '程式正式執行
+                        '新增修改資料
+                        Dim date1 As string = DateTime.now.tostring()
+                        Dim date2 As string = DateTime.now.tostring("yyyy-MM-dd HH:mm:ss")
+                        Dim insert1 As string = _
+                        "INSERT INTO 修改資料 " & _
+                        "(id_收,單位別,單位別_改,承辦人,承辦人_改,月,月_改,日,日_改,科目,科目_改,摘要,摘要_改,姓名,姓名_改,商號,商號_改,經手人,經手人_改,種類,種類_改,號數,號數_改,收入,收入_改,支出,支出_改,備註,備註_改,date) " & _
+                        "VALUES " & _
+                        "(" & id & ",NULLIF(N'" & 單位別_前 & "',''),NULLIF(N'" & 單位別 & "',''),NULLIF(N'" & _
+                        承辦人_前 & "',''),NULLIF(N'" & 承辦人 & "',''),NULLIF('" & _
+                        月_前 & "',''),NULLIF('" & 月 & "',''),NULLIF('" & _
+                        日_前 & "',''),NULLIF('" & 日 & "',''),NULLIF(N'" & _
+                        科目_前 & "',''),NULLIF(N'" & 原本科目 & "',''),NULLIF(N'" & _
+                        摘要_前 & "',''),NULLIF(N'" & 摘要 & "',''),NULLIF(N'" & _
+                        姓名_前 & "',''),NULLIF(N'" & 姓名 & "',''),NULLIF(N'" & _ 
+                        商號_前 & "',''),NULLIF(N'" & 商號 & "',''),NULLIF(N'" & _
+                        經手人_前 & "',''),NULLIF(N'" & 經手人 & "',''),NULLIF(N'" & _
+                        種類_前 & "',''),NULLIF(N'" & 種類 & "',''),NULLIF('" & _
+                        號數_前 & "',''),NULLIF('" & 號數 & "',''),NULLIF('" & _
+                        收入_前 & "',''),NULLIF('" & 收入 & "',''),NULLIF('" & _
+                        支出_前 & "',''),NULLIF('" & 支出 & "',''),NULLIF(N'" & _
+                        備註_前 & "',''),NULLIF(N'" & 備註 & "',''),NULLIF(N'" & date1 &  "',''))"
+                        data.insertCommAnd = insert1
                     data.insert()
                     '查詢修改資料表的ID，並把他給日誌
                     sql = "SELECT * FROM [修改資料] where id_收=" & id & "And date = '" & date1 & "'"
@@ -1828,51 +1828,51 @@ Partial Class 收支備查簿
                     data_dv = data.Select(New DataSourceSelectArguments)
                     Dim id_2 As string =data_dv(0)("id").ToString()
                     data.insertCommAnd = _
-                    "INSERT INTO 日誌 " & _
-                    "(id, 動作, 命令,日期,日期2) " & _
-                    "VALUES " & _
-                    "(N'" & id & "', N'修改', N'修改資料id="& id_2 &"', N'" & date1 & "', '" & date2 & "')"
-                    data.insert()
-                End If 
-                End If 
-                Dim Update1 As string ="UPDATE 收支備查簿 SET " & _
-                    "單位別 = NULLIF(N'" & 單位別 & "', ''), " & _
-                    "承辦人 = NULLIF(N'" & 承辦人 & "', ''), " & _
-                    "月 = NULLIF(N'" & 月 & "', ''), " & _
-                    "日 = NULLIF(N'" & 日 & "', ''), " & _
-                    "科目 = NULLIF(N'" & 科目 & "', ''), " & _
-                    "科目2 = NULLIF(N'" & 科目2 & "', ''), " & _
-                    "摘要 = REPLACE(REPLACE(NULLIF(N'" & 摘要 & "', ''),' ',''),CHAR(13)+CHAR(10),''), " & _
-                    "姓名 = NULLIF(N'" & 姓名 & "', ''), " & _
-                    "商號 = NULLIF(N'" & 商號 & "', ''), " & _
-                    "經手人 = NULLIF(N'" & 經手人 & "', ''), " & _
-                    "種類 = NULLIF(N'" & 種類 & "', ''), " & _
-                    "號數 = NULLIF(N'" & 號數 & "', ''), " & _
-                    "收入 = REPLACE(ISNULL(NULLIF('" & 收入 & "', ''),'0'), ',', ''), " & _
-                    "支出 = REPLACE(ISNULL(NULLIF('" & 支出 & "', ''),'0'), ',', ''), " & _
-                    "備註 = NULLIF(N'" & 備註 & "', ''), " & _
-                    "預支日期 = (CASE WHEN ISDATE(NULLIF(N'" & 預支日期 & "', ''))=1 Then NULLIF(N'" & 預支日期 & "', '') End )," & _
-                    "歸還日期 = (CASE WHEN ISDATE(NULLIF(N'" & 歸還日期 & "', ''))=1 Then NULLIF(N'" & 歸還日期 & "', '') End )" & _
-                    "WHERE id = '" & id & "' And 鎖定 = 'False' "'鎖定則不修改
-                data.UpdateCommAnd = Update1
-                data.Update()
-                '重算餘額，只做A，不能動到本月小計、累計至本月
-                If (_種類="A") Then
-                    data.UpdateCommAnd = _
-                    "WITH CTE AS " & _
-                    "(SELECT *, " & _
-                        "(SELECT TOP 1 (CASE WHEN ISNULL(收入,0) = 0 And ISNULL(支出,0) = 0  THEN 餘額 ELSE 0 END) FROM 收支備查簿 WHERE _種類 = '" & _種類 & "' ORDER BY id) " & _
-                        "+ " & _
-                        "(SUM(" & _
-	                    "(CASE WHEN ISNULL(摘要,'')<>'本月小計' And ISNULL(摘要,'')<>'累計至本月' THEN ISNULL(收入,0)ELSE 0 END )" & _
-                        "-" & _ 
-	                    "(CASE WHEN ISNULL(摘要,'')<>'本月小計' And ISNULL(摘要,'')<>'累計至本月' THEN ISNULL(支出,0)ELSE 0 END )" & _
-	                    ") OVER (ORDER BY id " & _
-                        "ROWS BETWEEN UNBOUNDED PRECEDING And CURRENT ROW))" & _
-                        "AS RunningTotal " & _
-                    "FROM 收支備查簿 WHERE _種類 = '" & _種類 & "') " & _
-                    "UPDATE CTE SET 餘額 = RunningTotal"
+                        "INSERT INTO 日誌 " & _
+                        "(id, 動作, 命令,日期,日期2) " & _
+                        "VALUES " & _
+                        "(N'" & id & "', N'修改', N'修改資料id="& id_2 &"', N'" & date1 & "', '" & date2 & "')"
+                        data.insert()
+                    End If 
+                    End If 
+                    Dim Update1 As string ="UPDATE 收支備查簿 SET " & _
+                        "單位別 = NULLIF(N'" & 單位別 & "', ''), " & _
+                        "承辦人 = NULLIF(N'" & 承辦人 & "', ''), " & _
+                        "月 = NULLIF(N'" & 月 & "', ''), " & _
+                        "日 = NULLIF(N'" & 日 & "', ''), " & _
+                        "科目 = NULLIF(N'" & 科目 & "', ''), " & _
+                        "科目2 = NULLIF(N'" & 科目2 & "', ''), " & _
+                        "摘要 = REPLACE(REPLACE(NULLIF(N'" & 摘要 & "', ''),' ',''),CHAR(13)+CHAR(10),''), " & _
+                        "姓名 = NULLIF(N'" & 姓名 & "', ''), " & _
+                        "商號 = NULLIF(N'" & 商號 & "', ''), " & _
+                        "經手人 = NULLIF(N'" & 經手人 & "', ''), " & _
+                        "種類 = NULLIF(N'" & 種類 & "', ''), " & _
+                        "號數 = NULLIF(N'" & 號數 & "', ''), " & _
+                        "收入 = REPLACE(ISNULL(NULLIF('" & 收入 & "', ''),'0'), ',', ''), " & _
+                        "支出 = REPLACE(ISNULL(NULLIF('" & 支出 & "', ''),'0'), ',', ''), " & _
+                        "備註 = NULLIF(N'" & 備註 & "', ''), " & _
+                        "預支日期 = (CASE WHEN ISDATE(NULLIF(N'" & 預支日期 & "', ''))=1 Then NULLIF(N'" & 預支日期 & "', '') End )," & _
+                        "歸還日期 = (CASE WHEN ISDATE(NULLIF(N'" & 歸還日期 & "', ''))=1 Then NULLIF(N'" & 歸還日期 & "', '') End )" & _
+                        "WHERE id = '" & id & "' And 鎖定 = 'False' "'鎖定則不修改
+                    data.UpdateCommAnd = Update1
                     data.Update()
+                    '重算餘額，只做A，不能動到本月小計、累計至本月
+                    If (_種類="A") Then
+                        data.UpdateCommAnd = _
+                        "WITH CTE AS " & _
+                        "(SELECT *, " & _
+                            "(SELECT TOP 1 (CASE WHEN ISNULL(收入,0) = 0 And ISNULL(支出,0) = 0  THEN 餘額 ELSE 0 END) FROM 收支備查簿 WHERE _種類 = '" & _種類 & "' ORDER BY id) " & _
+                            "+ " & _
+                            "(SUM(" & _
+	                        "(CASE WHEN ISNULL(摘要,'')<>'本月小計' And ISNULL(摘要,'')<>'累計至本月' THEN ISNULL(收入,0)ELSE 0 END )" & _
+                            "-" & _ 
+	                        "(CASE WHEN ISNULL(摘要,'')<>'本月小計' And ISNULL(摘要,'')<>'累計至本月' THEN ISNULL(支出,0)ELSE 0 END )" & _
+	                        ") OVER (ORDER BY id " & _
+                            "ROWS BETWEEN UNBOUNDED PRECEDING And CURRENT ROW))" & _
+                            "AS RunningTotal " & _
+                        "FROM 收支備查簿 WHERE _種類 = '" & _種類 & "') " & _
+                        "UPDATE CTE SET 餘額 = RunningTotal"
+                        data.Update()
                 End If
             End If
         Next

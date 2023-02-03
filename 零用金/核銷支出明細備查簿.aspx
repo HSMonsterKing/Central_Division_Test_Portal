@@ -193,6 +193,9 @@
         SelectCommand="
             SELECT * ,(CASE WHEN (left(REPLACE(REPLACE(a.摘要,' ',''),CHAR(13)+CHAR(10),''), 10) Like substring(REPLACE(REPLACE(b.摘要,' ',''),CHAR(13)+CHAR(10),''), 3, 10)
 				AND a.摘要 not Like '行政訴訟%' ) 
+				AND a.id in (SELECT min(id)
+					FROM 收支備查簿 
+					group by 年,left(REPLACE(REPLACE(摘要,' ',''),CHAR(13)+CHAR(10),''), 10),號數)
 				OR (a.id='417' And b.id='499') 
 				THEN (a.支出-b.收入) 
 				ELSE a.支出 END) As 支出2 

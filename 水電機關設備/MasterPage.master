@@ -35,6 +35,7 @@
                         <asp:Button ID="濾心更換週期" runat="server" PostBackUrl="./濾心清單.aspx" Text="濾心更換週期" CssClass="GreenButton" Visible="false" />
                         <asp:Button ID="濾心日誌" runat="server" PostBackUrl="./濾心日誌.aspx" Text="濾心日誌" CssClass="GreenButton" Visible="false" />
                         <asp:Button ID="水質檢驗週期" runat="server" PostBackUrl="./水質檢驗.aspx" Text="水質檢驗週期" CssClass="GreenButton" Visible="false" />
+                        <asp:Button ID="留言板" runat="server" PostBackUrl="./留言板.aspx" Text="留言板" CssClass="GreenButton" Visible="false" />
                         <asp:Button ID="測試" runat="server" PostBackUrl="./測試.aspx" Text="測試" CssClass="GreenButton" Visible="false" />
                         <asp:Button ID="更新資料" runat="server" PostBackUrl="./更新資料.aspx" Text="更新資料" CssClass="GreenButton" Visible="false" />
                         <asp:label ID="帳號名" runat="server" Text="" CssClass="Greenlabel" />
@@ -59,7 +60,7 @@
                 電話：04-22529181(總機）傳真機：04-22529262<br />
                 地址：40755 臺中市西屯區臺灣大道4段5巷55號 <br />
                 資料維護單位：中區養護工程分局秘書室<br />
-                網站更新日期：2023/02/02<br />
+                網站更新日期：2023/02/03<br />
 		    </div>
         </form>
     </body>

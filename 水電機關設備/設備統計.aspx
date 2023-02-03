@@ -96,7 +96,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="年限<BR>年數">
                     <ItemTemplate>
-                        <asp:TextBox ID="年限" runat="server" Text='<%# Bind("年限") %>' Maxlength=0 Enabled="True" placeholder="年限" CssClass="TextBox2 年限"/><BR>
+                        <asp:TextBox ID="年限" runat="server" Text='<%# Bind("年限") %>' Maxlength=0 Enabled="True" placeholder="年限" pattern="\d+年" CssClass="TextBox2 年限"/><BR>
                         <asp:TextBox ID="年數" runat="server" Text='<%# If(NOT(Eval("年數")Is DBNull.Value),Eval("年數"),If(IsDate(Eval("購置日期")),
                             If((DateDiff("m",Eval("購置日期"),Today())-If(Day(Eval("購置日期"))>Day(Today()),1,0))\12=0,"",(DateDiff("m",Eval("購置日期"),Today())-If(Day(Eval("購置日期"))>Day(Today()),1,0))\12 & "年") & 
                             If((DateDiff("m",Eval("購置日期"),Today())-If(Day(Eval("購置日期"))>Day(Today()),1,0))-(((DateDiff("m",Eval("購置日期"),Today())-If(Day(Eval("購置日期"))>Day(Today()),1,0))\12)*12)=0,If((DateDiff("m",Eval("購置日期"),Today())-If(Day(Eval("購置日期"))>Day(Today()),1,0))\12=0,"不到1月",""),(DateDiff("m",Eval("購置日期"),Today())-If(Day(Eval("購置日期"))>Day(Today()),1,0))-(((DateDiff("m",Eval("購置日期"),Today())-If(Day(Eval("購置日期"))>Day(Today()),1,0))\12)*12) & "月"), ""))%>' 

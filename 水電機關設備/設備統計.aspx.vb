@@ -71,6 +71,10 @@ Partial Class 設備統計
             Dim 數量 As String = CType(Me.GridView1.Rows(i).FindControl("數量"), TextBox).Text
             數量=數量.Replace(",", "")
             Dim 年限 As String = CType(Me.GridView1.Rows(i).FindControl("年限"), TextBox).Text
+            Dim 年限_regex as new Regex("^[0-9]{1,3}年")
+            If NOT 年限_regex.IsMatch(年限)
+                年限=nothing
+            End If
             Dim 年數 As String = CType(Me.GridView1.Rows(i).FindControl("年數"), TextBox).Text
             Dim 保管人 As String = CType(Me.GridView1.Rows(i).FindControl("保管人"), TextBox).Text
             Dim 存置地點 As String = CType(Me.GridView1.Rows(i).FindControl("存置地點"), TextBox).Text
