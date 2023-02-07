@@ -93,6 +93,7 @@ Partial Class 傳票資料
         'Case "土銀405收入"
             Me.GridView1.columns(12).Visible = True
             Me.GridView1.columns(14).Visible = True
+            Label3.text=""
         'Case "中國信託409全"
         'Case "中國信託409收入"
         'Case "中國信託409支出"
@@ -137,6 +138,13 @@ Partial Class 傳票資料
                 Me.GridView1.columns(29).Visible = True
                 Me.Button6.Enabled = False
                 Me.Button7.Enabled = False
+                Dim Calendar2 As String = Me.Calendar2.Text '民國
+                Calendar2 = totaiwancalendar(Calendar2).Replace("/", "")
+                data.SelectCommand = "select 預付日期,sum(支出金額) As 總支出金額 from 傳票資料 Where 預付日期=" & Calendar2 & "AND 登錄序號 Is Not Null group by 預付日期 order by 預付日期"
+                data_dv = data.Select(New DataSourceSelectArguments)
+                If(data_dv.count>0)
+                     Label3.text="總金額:"& data_dv(0)("總支出金額").ToString()
+                End If
             Case "土銀405支票"
                 Me.Panel3.Visible = True
                 Me.Panel5.Visible = True
@@ -186,7 +194,14 @@ Partial Class 傳票資料
     
     Protected Sub GridView1_DataBound(ByVal sender As Object, ByVal e As System.EventArgs) Handles GridView1.DataBound
         If (Me.DropDownList1.SelectedValue="土銀405匯款")
+            Dim Calendar2 As String = Me.Calendar2.Text '民國
+            Calendar2 = totaiwancalendar(Calendar2).Replace("/", "")
+            data.SelectCommand = "select 預付日期,sum(支出金額) As 總支出金額 from 傳票資料 Where 預付日期=" & Calendar2 & "AND 登錄序號 Is Not Null group by 預付日期 order by 預付日期"
+            data_dv = data.Select(New DataSourceSelectArguments)
             Dim 總金額2 As Long = 0
+            If(data_dv.count>0)
+                 總金額2 = data_dv(0)("總支出金額").ToString()
+            End If
             For j = 0 To Me.GridView1.Rows.Count - 1
                 If CType(Me.GridView1.Rows(j).FindControl("CheckBox1"), Checkbox).Checked = True 'AND (Checked)
                     總金額2 = 總金額2 + CLng(CType(Me.GridView1.Rows(j).FindControl("TextBox11"), TextBox).Text)
@@ -195,12 +210,15 @@ Partial Class 傳票資料
             For j = 0 To Me.GridView1.Rows.Count - 1
                     If CType(Me.GridView1.Rows(j).FindControl("CheckBox1"), Checkbox).Checked = True 'AND (Checked)
                         If(總金額2>0)
-                            CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=總金額2
+                            Label3.text="總金額:"&總金額2
+                            'CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=總金額2
                         If (總金額2>50000000)
-                            CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).ForeColor=Color.Red
+                            Label3.ForeColor=Color.Red
+                            'CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).ForeColor=Color.Red
                             End If
-                        Else
-                            CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=""
+                        ' Else
+                        '     Label3.Text="DataBound_C"
+                            'CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=""
                         End If
                     End If
                 Next
@@ -325,8 +343,14 @@ Partial Class 傳票資料
                 Dim i As Long = sender.NamingContainer.RowIndex
                 Dim id As String = CType(Me.GridView1.Rows(i).FindControl("Label2"), Label).Text
                 Dim Checked As Boolean = CType(Me.GridView1.Rows(i).FindControl("CheckBox1"), CheckBox).Checked
-                
+                Dim Calendar2 As String = Me.Calendar2.Text '民國
+                Calendar2 = totaiwancalendar(Calendar2).Replace("/", "")
+                data.SelectCommand = "select 預付日期,sum(支出金額) As 總支出金額 from 傳票資料 Where 預付日期=" & Calendar2 & "AND 登錄序號 Is Not Null group by 預付日期 order by 預付日期"
+                data_dv = data.Select(New DataSourceSelectArguments)
                 Dim 總金額2 As Long = 0
+                If(data_dv.count>0)
+                     總金額2 = data_dv(0)("總支出金額").ToString()
+                End If
                 For j = 0 To Me.GridView1.Rows.Count - 1
                     If CType(Me.GridView1.Rows(j).FindControl("CheckBox1"), Checkbox).Checked = True 'AND (Checked)
                         總金額2 = 總金額2 + CLng(CType(Me.GridView1.Rows(j).FindControl("TextBox11"), TextBox).Text)
@@ -336,19 +360,27 @@ Partial Class 傳票資料
                 For j = 0 To Me.GridView1.Rows.Count - 1
                     If CType(Me.GridView1.Rows(j).FindControl("CheckBox1"), Checkbox).Checked = True 'AND (Checked)
                         If(總金額2>0)
-                            CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=總金額2
+                            Label3.text="總金額:"&總金額2
+                            'CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=總金額2
                             If (總金額2>50000000)
-                                CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).ForeColor=Color.Red
+                                Label3.ForeColor=Color.Red
+                                'CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).ForeColor=Color.Red
                             End If
-                        Else
-                            CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=""
+                        ' Else
+                        '     Label3.text="CheckedChanged_0"
+                            'CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=""
                         End If
-                    ElseIf j=i AND Not(Checked) 
-                        CType(Me.GridView1.Rows(i).FindControl("TextBox20"), TextBox).Text=""
+                    ElseIf j=i AND Not(Checked) AND (總金額2=0)
+                        Label3.text="" 
+                    Else
+                        Label3.text="總金額:"&總金額2
+                        If (總金額2<=50000000)
+                                Label3.ForeColor=Color.purple
+                                'CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).ForeColor=Color.Red
+                            End If
+                        'CType(Me.GridView1.Rows(i).FindControl("TextBox20"), TextBox).Text=""
                     End If
                 Next
-                Dim Calendar2 As String = Me.Calendar2.Text '民國
-                Calendar2 = totaiwancalendar(Calendar2).Replace("/", "")
                 Calendar2 = If(Checked, Calendar2, "")
                 CType(Me.GridView1.Rows(i).FindControl("TextBox9"), TextBox).Text = Calendar2
                 data.UpdateCommand = "UPDATE 傳票資料 SET 下載 = CAST('" & Checked & "' AS bit), 預付日期 = '" & Calendar2 & "' WHERE id = '" & id & "'"
@@ -550,14 +582,23 @@ Partial Class 傳票資料
                 Next
                 
                 '重算土銀405匯款總金額
+                '如用TXT檔名為標準則只可以算TXT的總金額
+                '如用預付日期為標準，會出現取消後的檔案也會被計算，在預覽期間
                 Try
                     data.UpdateCommand = _
                     "WITH CTE AS (" & _
-                        "SELECT TABLE1.id, TABLE1.TXT檔名, 總金額, 計算結果 FROM 傳票資料 TABLE1 " & _
+                        "SELECT TABLE1.id, TABLE1.預付日期,下載,登錄序號, 總金額, 計算結果 FROM 傳票資料 TABLE1 " & _
                         "INNER JOIN " & _
-                        "(SELECT TXT檔名, SUM(支出金額) AS 計算結果 FROM 傳票資料 WHERE TXT檔名 != '' AND TXT檔名 IS NOT NULL GROUP BY TXT檔名) AS TABLE2 " & _
-                        "ON TABLE1.TXT檔名 = TABLE2.TXT檔名" & _
-                    ") UPDATE CTE SET 總金額 = 計算結果"
+                        "(SELECT 預付日期, SUM(支出金額) AS 計算結果 FROM 傳票資料 WHERE TXT檔名 != '' AND TXT檔名 IS NOT NULL AND 預付日期 != '' AND 預付日期 IS NOT NULL GROUP BY 預付日期) AS TABLE2 " & _
+                        "ON TABLE1.預付日期 = TABLE2.預付日期" & _
+                    ") UPDATE CTE SET 總金額 = 計算結果 Where 下載 Is NULL AND 登錄序號 Is Not Null"
+                    ' data.UpdateCommand = _
+                    ' "WITH CTE AS (" & _
+                    '     "SELECT TABLE1.id, TABLE1.TXT檔名, 總金額, 計算結果 FROM 傳票資料 TABLE1 " & _
+                    '     "INNER JOIN " & _
+                    '     "(SELECT TXT檔名, SUM(支出金額) AS 計算結果 FROM 傳票資料 WHERE TXT檔名 != '' AND TXT檔名 IS NOT NULL GROUP BY TXT檔名) AS TABLE2 " & _
+                    '     "ON TABLE1.TXT檔名 = TABLE2.TXT檔名" & _
+                    ' ") UPDATE CTE SET 總金額 = 計算結果"
                     data.Update()
                 Catch
                     Result = 2
@@ -566,11 +607,17 @@ Partial Class 傳票資料
                 Try
                     data.UpdateCommand = _
                     "WITH CTE AS (" & _
-                        "SELECT TABLE1.id, TABLE1.登錄序號, 總金額, 計算結果 FROM 傳票資料 TABLE1 " & _
+                        "SELECT TABLE1.id, TABLE1.預付日期,下載,登錄序號, 總金額, 計算結果 FROM 傳票資料 TABLE1 " & _
                         "INNER JOIN " & _
-                        "(SELECT 登錄序號, SUM(支出金額) AS 計算結果 FROM 傳票資料 WHERE LEN(登錄序號) > 0 AND (TXT檔名 = '' OR TXT檔名 IS NULL) GROUP BY 登錄序號) AS TABLE2 " & _
-                        "ON TABLE1.登錄序號 = TABLE2.登錄序號" & _
-                    ") UPDATE CTE SET 總金額 = 計算結果"
+                        "(SELECT 預付日期, SUM(支出金額) AS 計算結果 FROM 傳票資料 WHERE TXT檔名 != '' AND TXT檔名 IS NOT NULL AND 預付日期 != '' AND 預付日期 IS NOT NULL GROUP BY 預付日期) AS TABLE2 " & _
+                        "ON TABLE1.預付日期 = TABLE2.預付日期" & _
+                    ") UPDATE CTE SET 總金額 = 計算結果 Where 下載 Is NULL AND 登錄序號 Is Not Null"
+                    ' "WITH CTE AS (" & _
+                    '     "SELECT TABLE1.id, TABLE1.TXT檔名, 總金額, 計算結果 FROM 傳票資料 TABLE1 " & _
+                    '     "INNER JOIN " & _
+                    '     "(SELECT TXT檔名, SUM(支出金額) AS 計算結果 FROM 傳票資料 WHERE TXT檔名 != '' AND TXT檔名 IS NOT NULL GROUP BY TXT檔名) AS TABLE2 " & _
+                    '     "ON TABLE1.TXT檔名 = TABLE2.TXT檔名" & _
+                    ' ") UPDATE CTE SET 總金額 = 計算結果"
                     data.Update()
                 Catch
                     Result = 2
@@ -640,9 +687,9 @@ Partial Class 傳票資料
                     ScriptManager.RegisterStartupScript(Me, Page.GetType, "Script1", "alert('請輸入登錄日期、預付日期、登錄序號、TXT檔名。');", True)
                     Exit Sub
                 End If
-                For j = 0 To Me.GridView1.Rows.Count - 1
-                    CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=""'重設總金額
-                Next   
+                ' For j = 0 To Me.GridView1.Rows.Count - 1
+                '     'CType(Me.GridView1.Rows(j).FindControl("TextBox20"), TextBox).Text=""'重設總金額
+                ' Next
             Else If Me.DropDownList1.SelectedValue = "土銀405支票" Or Me.DropDownList1.SelectedValue = "中國信託409支出"
                 If Me.Calendar3.Text = "" Or Me.支票編號.Text = ""
                     ScriptManager.RegisterStartupScript(Me, Page.GetType, "Script1", "alert('請輸入支票日期、支票編號。');", True)
@@ -699,7 +746,12 @@ Partial Class 傳票資料
                 Calendar2 = totaiwancalendar(Calendar2).Replace("/", "")
                 Dim TXT檔名 As String = Me.TXT檔名.Text
                 Dim 登錄序號 As Long = Me.登錄序號.Text
+                data.SelectCommand = "select 預付日期,sum(支出金額) As 總支出金額 from 傳票資料 Where 預付日期=" & Calendar2 & "AND 登錄序號 Is Not Null group by 預付日期 order by 預付日期"
+                data_dv = data.Select(New DataSourceSelectArguments)
                 Dim 總金額 As Long = 0
+                If(data_dv.count>0)
+                     總金額 = data_dv(0)("總支出金額").ToString()
+                End If
                 For i = 0 To Me.GridView1.Rows.Count - 1
                     If CType(Me.GridView1.Rows(i).FindControl("CheckBox1"), Checkbox).Checked = True
                         總金額 = 總金額 + CLng(CType(Me.GridView1.Rows(i).FindControl("TextBox11"), TextBox).Text)

@@ -293,7 +293,7 @@
             <FooterStyle/>
             <PagerSettings  Mode="NumericFirstLast" FirstPageText="<<" PreviousPageText="<" NextPageText=">" LastPageText=">>" />
         </asp:GridView>
-        <asp:Label ID="Label3" runat="server" Text="" CssClass="Label3"/>
+        <asp:Label ID="Label3" runat="server" Text="" float="right" CssClass="Label3"/>
     </asp:Panel>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ApplicationServices%>'
         SelectCommand=" 
