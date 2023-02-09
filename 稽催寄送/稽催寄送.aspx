@@ -11,8 +11,9 @@
         <asp:Button ID="搜尋" runat="server" Text="搜尋" CssClass="GreenButton"/>
         <asp:Button ID="顯示稽催" runat="server" Text="顯示稽催" OnClick="顯示稽催_Click" CssClass="GreenButton"/>
         <asp:Button ID="顯示內容" runat="server" Text="顯示內容" OnClick="顯示內容_Click" Visible="false"  CssClass="GreenButton"/>
-        <!-- 附件:<asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="True" CssClass="UploadButton"/> -->
-        <asp:Button ID="寄送" runat="server" Text="寄送" OnClick="寄送_Click" Visible="false" CssClass="GreenButton"/>
+        附件:<asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="True" CssClass="UploadButton"/>
+        <asp:Button ID="寄送" runat="server" Text="寄送" OnClick="寄送_Click" OnClientClick="return confirm('確定寄送?')" Visible="false" CssClass="GreenButton"/>
+        <asp:Button ID="測試" runat="server" Text="測試" OnClick="Test" OnClientClick="return confirm('確定寄送?')" Visible="false" CssClass="GreenButton"/>
         <asp:Label ID="Label1" runat="server" Text="" CssClass="GreenLabel"/>
         <asp:Label ID="Label2" runat="server" Text="" CssClass="RedLabel"/>
     </asp:Panel>

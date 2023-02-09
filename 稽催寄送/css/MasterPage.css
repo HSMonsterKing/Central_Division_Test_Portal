@@ -5,7 +5,7 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
-    background-color:#FFD382;
+    background-color:#FFFFFF;
 }
 h1 {
     margin: 0;
@@ -24,13 +24,13 @@ a {
 }
 .Panel1 {
     white-space: nowrap;
-    background-color:#FFD382;
+    background-color:#CCDDFF;
 }
 .Panel1, .Panel4, .Panel5, .Panel6, .Panel7, .Panel8 {
     display: inline;
 }
 .Panel3, .Panel4, .Panel5, .Panel6, .Panel7, .Panel8 {
-    background-color:#F2B69D;
+    background-color:#CCEEFF;
 }
 mark {
 	background-color: transparent;
